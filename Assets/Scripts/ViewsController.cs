@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ViewsController : MonoBehaviour
 {
-    [SerializeField] private TextMeshPro views;
+    [SerializeField] private TMP_Text views;
 
     private long viewsNumber;
 

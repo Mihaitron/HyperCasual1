@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 
@@ -76,9 +77,24 @@ public class ArrowsGenerator : MonoBehaviour
         {
             if (arrowList.Count != 0)
             {
-                lastArrow = arrowList[arrowList.Count - 1];
+                lastArrow = arrowList[0];
+                arrowList.RemoveAt(0);
                 arrowSeted = true;
             }
+        }
+
+
+        if (arrowSeted)
+        {
+            if (swipePos.transform.position.x - lastArrow.transform.position.x > niceDistance + 5f)
+            {
+                Destroy(lastArrow);
+                arrowSeted = false;
+            }
+            Debug.Log("Last arrow: ");
+            Debug.Log(lastArrow.transform.position.x);
+            Debug.Log("Swipe Position: ");
+            Debug.Log(swipePos.transform.position.x);
         }
     }
 
@@ -194,5 +210,7 @@ public class ArrowsGenerator : MonoBehaviour
             // TODO add sound ohh
             // TODO add particle effect ohh play
         }
+        Destroy(lastArrow);
+        arrowSeted = false;
     }
 }

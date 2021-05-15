@@ -1240,7 +1240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 696.9k
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd71440ef165f7746bcc7799c69c4310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  views: {fileID: 0}
+  views: {fileID: 1031034193}
 --- !u!4 &1753438174
 Transform:
   m_ObjectHideFlags: 0
@@ -2248,9 +2248,13 @@ MonoBehaviour:
   rightArrow: {fileID: 8457393728517801474, guid: 648a399769db23246b16b6b16a3bc9d8,
     type: 3}
   swipePos: {fileID: 1874082523}
-  perfectDistance: 0
-  goodDistance: 0
-  niceDistance: 0
+  perfectDistance: 5
+  goodDistance: 10
+  niceDistance: 15
+  views: {fileID: 1753438173}
+  perfectViews: 200
+  goodViews: 100
+  niceViews: 50
 --- !u!1001 &1845023281
 PrefabInstance:
   m_ObjectHideFlags: 0
