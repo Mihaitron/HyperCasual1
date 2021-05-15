@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2249,8 +2249,8 @@ MonoBehaviour:
     type: 3}
   swipePos: {fileID: 1874082523}
   perfectDistance: 5
-  goodDistance: 10
-  niceDistance: 15
+  goodDistance: 15
+  niceDistance: 30
   views: {fileID: 1753438173}
   perfectViews: 200
   goodViews: 100
