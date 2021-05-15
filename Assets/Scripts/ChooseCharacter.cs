@@ -38,6 +38,8 @@ public class ChooseCharacter : MonoBehaviour
 
     public void GoLeft()
     {
+        SoundManager.instance.PlayButtonClickedSound();
+        
         this.current--;
         if (this.current < 0)
         {
@@ -58,6 +60,8 @@ public class ChooseCharacter : MonoBehaviour
     
     public void GoRight()
     {
+        SoundManager.instance.PlayButtonClickedSound();
+        
         this.current++;
         if (this.current >= this.spawnedCharacers.Count)
         {
@@ -78,6 +82,7 @@ public class ChooseCharacter : MonoBehaviour
 
     public void Select()
     {
+        SoundManager.instance.PlayButtonClickedSound();
         PlayerPrefs.SetInt("character_no", this.current);
     }
 }

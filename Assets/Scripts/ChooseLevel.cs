@@ -31,6 +31,8 @@ public class ChooseLevel : MonoBehaviour
 
     public void GoLeft()
     {
+        SoundManager.instance.PlayButtonClickedSound();
+        
         this.current--;
         if (this.current < 0)
         {
@@ -44,6 +46,8 @@ public class ChooseLevel : MonoBehaviour
     
     public void GoRight()
     {
+        SoundManager.instance.PlayButtonClickedSound();
+    
         this.current++;
         if (this.current >= this.levels.Count)
         {
@@ -59,6 +63,7 @@ public class ChooseLevel : MonoBehaviour
 
     public void Select()
     {
+        SoundManager.instance.PlayButtonClickedSound();
         PlayerPrefs.SetInt("level_no", this.current);
     }
 }
