@@ -11,11 +11,12 @@ public class Swiping : MonoBehaviour
 
     private Vector2 fingerDownPosition;
     private Vector2 fingerUpPosition;
+    private ArrowsGenerator manager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = this.GetComponent<ArrowsGenerator>();
     }
 
     // Update is called once per frame
@@ -42,25 +43,16 @@ public class Swiping : MonoBehaviour
             if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
                                                                 fingerDownPosition.x - fingerUpPosition.x))
             {
-                down.SetActive(true);
-                stanga.SetActive(false);
-                dreapta.SetActive(false);
-                up.SetActive(false);
+                manager.SwipeAction(1);
             }
             else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
                                                                      fingerDownPosition.x - fingerUpPosition.x))
             {
-                down.SetActive(false);
-                stanga.SetActive(false);
-                dreapta.SetActive(false);
-                up.SetActive(true);
+                manager.SwipeAction(0);
             }
             else
             {
-                down.SetActive(false);
-                stanga.SetActive(true);
-                dreapta.SetActive(false);
-                up.SetActive(false);
+                manager.SwipeAction(2);
             }
         }
         else
@@ -68,25 +60,16 @@ public class Swiping : MonoBehaviour
             if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
                                                                 fingerUpPosition.x - fingerDownPosition.x))
             {
-                down.SetActive(true);
-                stanga.SetActive(false);
-                dreapta.SetActive(false);
-                up.SetActive(false);
+                manager.SwipeAction(1);
             }
             else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
                                                                      fingerUpPosition.x - fingerDownPosition.x))
             {
-                down.SetActive(false);
-                stanga.SetActive(false);
-                dreapta.SetActive(false);
-                up.SetActive(true);
+                manager.SwipeAction(0);
             }
             else
             {
-                down.SetActive(false);
-                stanga.SetActive(false);
-                dreapta.SetActive(true);
-                up.SetActive(false);
+                manager.SwipeAction(3);
             }
         }
     }
