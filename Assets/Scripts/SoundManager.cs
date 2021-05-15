@@ -20,14 +20,30 @@ public class SoundManager
     }
 
     private AudioClip pressButton = Resources.Load<AudioClip>("Sounds/PressButton");
+    private bool muted = false;
 
     public float PlayButtonClickedSound()
     {
-        GameObject sound_game_object = new GameObject("Sound");
-        AudioSource audio_source = sound_game_object.AddComponent<AudioSource>();
+        if (!this.muted)
+        {
+            GameObject sound_game_object = new GameObject("Sound");
+            AudioSource audio_source = sound_game_object.AddComponent<AudioSource>();
         
-        audio_source.PlayOneShot(this.pressButton);
+            audio_source.PlayOneShot(this.pressButton);
 
-        return this.pressButton.length;
+            return this.pressButton.length;
+        }
+
+        return 0;
+    }
+
+    public void ToggleSound()
+    {
+        this.muted = !this.muted;
+    }
+
+    public bool IsMuted()
+    {
+        return this.muted;
     }
 }
