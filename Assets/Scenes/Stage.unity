@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425635244}
   - component: {fileID: 425635245}
+  - component: {fileID: 425635246}
   m_Layer: 5
   m_Name: ArrowManager
   m_TagString: Untagged
@@ -684,8 +685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0fb2e8d9eb2184ab7dd026de7be8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 2
-  maxTime: 1
+  minTime: 1
+  maxTime: 2
   upArrow: {fileID: 2805327442877728033, guid: eb1c1ef0825a7034f9901d28784eb9e9, type: 3}
   downArrow: {fileID: 6397461377971129369, guid: 0fdfde15defeb254298daead14f88b64,
     type: 3}
@@ -701,6 +702,18 @@ MonoBehaviour:
   perfectViews: 200
   goodViews: 100
   niceViews: 50
+--- !u!114 &425635246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425635243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e514eaf72835a42b7436177c0310be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &425935615
 GameObject:
   m_ObjectHideFlags: 0

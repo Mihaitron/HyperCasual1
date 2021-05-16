@@ -103,117 +103,121 @@ public class ArrowsGenerator : MonoBehaviour
 
     public void SwipeAction(int direction)
     {
-        var dir = lastArrow.GetComponent<ArrowType>().direction;
-        if (dir == ArrowDirection.UP && direction == 0)
+        if (arrowSeted)
         {
-            if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
+            var dir = lastArrow.GetComponent<ArrowType>().direction;
+            if (dir == ArrowDirection.UP && direction == 0)
             {
-                // TODO add sound perfect
-                // TODO add particle effect perfect play
-                views.AddViews(perfectViews);
+                if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
+                {
+                    // TODO add sound perfect
+                    // TODO add particle effect perfect play
+                    views.AddViews(perfectViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
+                {
+                    // TODO add sound good job
+                    // TODO add particle effect good job play
+                    views.AddViews(goodViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
+                {
+                    // TODO add sound nice
+                    // TODO add particle effect nice play
+                    views.AddViews(niceViews);
+                }
+                else
+                {
+                    // TODO add sound ohh
+                    // TODO add particle effect ohh play
+                }
             }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
+            else if (dir == ArrowDirection.DOWN && direction == 1)
             {
-                // TODO add sound good job
-                // TODO add particle effect good job play
-                views.AddViews(goodViews);
+                if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
+                {
+                    // TODO add sound perfect
+                    // TODO add particle effect perfect play
+                    views.AddViews(perfectViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
+                {
+                    // TODO add sound good job
+                    // TODO add particle effect good job play
+                    views.AddViews(goodViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
+                {
+                    // TODO add sound nice
+                    // TODO add particle effect nice play
+                    views.AddViews(niceViews);
+                }
+                else
+                {
+                    // TODO add sound ohh
+                    // TODO add particle effect ohh play
+                }
             }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
+            else if (dir == ArrowDirection.LEFT && direction == 2)
             {
-                // TODO add sound nice
-                // TODO add particle effect nice play
-                views.AddViews(niceViews);
+                if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
+                {
+                    // TODO add sound perfect
+                    // TODO add particle effect perfect play
+                    views.AddViews(perfectViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
+                {
+                    // TODO add sound good job
+                    // TODO add particle effect good job play
+                    views.AddViews(goodViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
+                {
+                    // TODO add sound nice
+                    // TODO add particle effect nice play
+                    views.AddViews(niceViews);
+                }
+                else
+                {
+                    // TODO add sound ohh
+                    // TODO add particle effect ohh play
+                }
+            }
+            else if (dir == ArrowDirection.RIGHT && direction == 3)
+            {
+                if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
+                {
+                    // TODO add sound perfect
+                    // TODO add particle effect perfect play
+                    views.AddViews(perfectViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
+                {
+                    // TODO add sound good job
+                    // TODO add particle effect good job play
+                    views.AddViews(goodViews);
+                }
+                else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
+                {
+                    // TODO add sound nice
+                    // TODO add particle effect nice play
+                    views.AddViews(niceViews);
+                }
+                else
+                {
+                    // TODO add sound ohh
+                    // TODO add particle effect ohh play
+                }
             }
             else
             {
                 // TODO add sound ohh
                 // TODO add particle effect ohh play
             }
+
+            Destroy(lastArrow);
+            arrowSeted = false;
         }
-        else if (dir == ArrowDirection.DOWN && direction == 1)
-        {
-            if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
-            {
-                // TODO add sound perfect
-                // TODO add particle effect perfect play
-                views.AddViews(perfectViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
-            {
-                // TODO add sound good job
-                // TODO add particle effect good job play
-                views.AddViews(goodViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
-            {
-                // TODO add sound nice
-                // TODO add particle effect nice play
-                views.AddViews(niceViews);
-            }
-            else
-            {
-                // TODO add sound ohh
-                // TODO add particle effect ohh play
-            }
-        }
-        else if (dir == ArrowDirection.LEFT && direction == 2)
-        {
-            if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
-            {
-                // TODO add sound perfect
-                // TODO add particle effect perfect play
-                views.AddViews(perfectViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
-            {
-                // TODO add sound good job
-                // TODO add particle effect good job play
-                views.AddViews(goodViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
-            {
-                // TODO add sound nice
-                // TODO add particle effect nice play
-                views.AddViews(niceViews);
-            }
-            else
-            {
-                // TODO add sound ohh
-                // TODO add particle effect ohh play
-            }
-        }
-        else if (dir == ArrowDirection.RIGHT && direction == 3)
-        {
-            if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
-            {
-                // TODO add sound perfect
-                // TODO add particle effect perfect play
-                views.AddViews(perfectViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
-            {
-                // TODO add sound good job
-                // TODO add particle effect good job play
-                views.AddViews(goodViews);
-            }
-            else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
-            {
-                // TODO add sound nice
-                // TODO add particle effect nice play
-                views.AddViews(niceViews);
-            }
-            else
-            {
-                // TODO add sound ohh
-                // TODO add particle effect ohh play
-            }
-        }
-        else
-        {
-            // TODO add sound ohh
-            // TODO add particle effect ohh play
-        }
-        Destroy(lastArrow);
-        arrowSeted = false;
     }
 }
