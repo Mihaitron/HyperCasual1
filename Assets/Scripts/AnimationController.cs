@@ -22,11 +22,11 @@ public class AnimationController : MonoBehaviour
         {
             this.animationNo = 3;
         }
-        else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        else
         {
             this.animationNo = Random.Range(2, 4) - 1;
         }
-        
+
         this.animator.SetInteger("anim", this.animationNo);
     }
 }

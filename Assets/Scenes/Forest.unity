@@ -2172,6 +2172,7 @@ MonoBehaviour:
   perfectViews: 200
   goodViews: 100
   niceViews: 50
+  winScreen: {fileID: 486492099}
 --- !u!114 &1668473519
 MonoBehaviour:
   m_ObjectHideFlags: 0
