@@ -21,6 +21,10 @@ public class ArrowsGenerator : MonoBehaviour
     [SerializeField] private int goodViews;
     [SerializeField] private int niceViews;
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private ParticleSystem particlesAww;
+    [SerializeField] private ParticleSystem particlesNice;
+    [SerializeField] private ParticleSystem particlesGood;
+    [SerializeField] private ParticleSystem particlesPerfect;
 
     private List<GameObject> arrowList = new List<GameObject>();
     private GameObject lastArrow;
@@ -101,6 +105,8 @@ public class ArrowsGenerator : MonoBehaviour
                     Destroy(lastArrow);
                     arrowSeted = false;
                     isAww = true;
+                    
+                    particlesAww.Play();
                 }
             }
         }
@@ -121,25 +127,25 @@ public class ArrowsGenerator : MonoBehaviour
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add particle effect perfect play
+                        particlesPerfect.Play();
                         views.AddViews(perfectViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add particle effect good job play
+                        particlesGood.Play();
                         views.AddViews(goodViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add particle effect nice play
+                        particlesNice.Play();
                         views.AddViews(niceViews);
                         isAww = false;
                     }
                     else
                     {
-                        // TODO add particle effect ohh play
+                        particlesAww.Play();
                         isAww = true;
                     }
                 }
@@ -147,88 +153,84 @@ public class ArrowsGenerator : MonoBehaviour
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add particle effect perfect play
+                        particlesPerfect.Play();
                         views.AddViews(perfectViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add particle effect good job play
+                        particlesGood.Play();
                         views.AddViews(goodViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add particle effect nice play
+                        particlesNice.Play();
                         views.AddViews(niceViews);
                         isAww = false;
                     }
                     else
                     {
-                        // TODO add particle effect ohh play
+                        particlesAww.Play();
                         isAww = true;
-
                     }
                 }
                 else if (dir == ArrowDirection.LEFT && direction == 2)
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add particle effect perfect play
+                        particlesPerfect.Play();
                         views.AddViews(perfectViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add particle effect good job play
+                        particlesGood.Play();
                         views.AddViews(goodViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add particle effect nice play
+                        particlesNice.Play();
                         views.AddViews(niceViews);
                         isAww = false;
                     }
                     else
                     {
-                        // TODO add particle effect ohh play
+                        particlesAww.Play();
                         isAww = true;
-
                     }
                 }
                 else if (dir == ArrowDirection.RIGHT && direction == 3)
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add particle effect perfect play
+                        particlesPerfect.Play();
                         views.AddViews(perfectViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add particle effect good job play
+                        particlesGood.Play();
                         views.AddViews(goodViews);
                         isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add particle effect nice play
+                        particlesNice.Play();
                         views.AddViews(niceViews);
                         isAww = false;
                     }
                     else
                     {
-                        // TODO add particle effect ohh play
+                        particlesAww.Play();
                         isAww = true;
-
                     }
                 }
                 else
                 {
-                    // TODO add particle effect ohh play
+                    particlesAww.Play();
                     isAww = true;
-
                 }
 
                 Destroy(lastArrow);
