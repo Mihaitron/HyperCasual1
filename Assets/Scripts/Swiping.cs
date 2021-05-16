@@ -7,10 +7,14 @@ public class Swiping : MonoBehaviour
     private Vector2 fingerDownPosition;
     private Vector2 fingerUpPosition;
     private ArrowsGenerator manager;
+    private bool isMoving;
+    private bool oneMove;
 
     // Start is called before the first frame update
     void Start()
     {
+        isMoving = false;
+        oneMove = false;
         manager = this.GetComponent<ArrowsGenerator>();
     }
 
@@ -25,50 +29,59 @@ public class Swiping : MonoBehaviour
             else if (touch.phase == TouchPhase.Moved)
             {
                 fingerUpPosition = touch.position;
+                isMoving = true;
             }
 
             else if (touch.phase == TouchPhase.Ended)
             {
                 fingerUpPosition = touch.position;
+                isMoving = false;
+                oneMove = true;
             }
         }
 
-        if (Input.touchCount != 0)
+        if (oneMove)
         {
-            if (fingerUpPosition.x < fingerDownPosition.x)
+            if (!isMoving)
             {
-                if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
-                                                                    fingerDownPosition.x - fingerUpPosition.x))
+                if (fingerUpPosition.x < fingerDownPosition.x)
                 {
-                    manager.SwipeAction(1);
-                }
-                else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
-                                                                         fingerDownPosition.x - fingerUpPosition.x))
-                {
-                    manager.SwipeAction(0);
+                    if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
+                                                                        fingerDownPosition.x - fingerUpPosition.x))
+                    {
+                        manager.SwipeAction(1);
+                    }
+                    else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
+                                                                             fingerDownPosition.x - fingerUpPosition.x))
+                    {
+                        manager.SwipeAction(0);
+                    }
+                    else
+                    {
+                        manager.SwipeAction(2);
+                    }
                 }
                 else
                 {
-                    manager.SwipeAction(2);
-                }
+                    if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
+                                                                        fingerUpPosition.x - fingerDownPosition.x))
+                    {
+                        manager.SwipeAction(1);
+                    }
+                    else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
+                                                                             fingerUpPosition.x - fingerDownPosition.x))
+                    {
+                        manager.SwipeAction(0);
+                    }
+                    else
+                    {
+                        manager.SwipeAction(3);
+                    }
+                }  
             }
-            else
-            {
-                if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
-                                                                    fingerUpPosition.x - fingerDownPosition.x))
-                {
-                    manager.SwipeAction(1);
-                }
-                else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
-                                                                         fingerUpPosition.x - fingerDownPosition.x))
-                {
-                    manager.SwipeAction(0);
-                }
-                else
-                {
-                    manager.SwipeAction(3);
-                }
-            }
+
+            oneMove = false;
+
         }
     }
 }
