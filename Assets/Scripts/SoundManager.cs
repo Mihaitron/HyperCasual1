@@ -29,6 +29,7 @@ public class SoundManager
         
         this.songs.Add(Resources.Load<AudioClip>("Sounds/Future Funk"));
         this.songs.Add(Resources.Load<AudioClip>("Sounds/Turn It Up"));
+        this.songs.Add(Resources.Load<AudioClip>("Sounds/Sleazy Fight"));
     }
 
     public float PlayButtonClickedSound()
