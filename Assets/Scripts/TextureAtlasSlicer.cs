@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEditor;
@@ -166,3 +166,4 @@ public class TextureAtlasSlicer : EditorWindow
         }
     }
 }
+#endif
