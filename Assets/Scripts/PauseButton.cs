@@ -19,6 +19,7 @@ public class PauseButton : MonoBehaviour
             
             // TODO stop arrows
             GameObject.Find("Sound").GetComponent<AudioSource>().Pause();
+            GameObject.Find("ArrowManager").GetComponent<ArrowsGenerator>().setPause(true);
         }
         else
         {
@@ -27,6 +28,7 @@ public class PauseButton : MonoBehaviour
             
             // TODO start arrows
             GameObject.Find("Sound").GetComponent<AudioSource>().UnPause();
+            GameObject.Find("ArrowManager").GetComponent<ArrowsGenerator>().setPause(false);
         }
     }
 }
