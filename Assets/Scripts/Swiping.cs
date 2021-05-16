@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Swiping : MonoBehaviour
 {
-    public GameObject stanga;
-    public GameObject dreapta;
-    public GameObject up;
-    public GameObject down;
-
     private Vector2 fingerDownPosition;
     private Vector2 fingerUpPosition;
     private ArrowsGenerator manager;
@@ -38,38 +33,41 @@ public class Swiping : MonoBehaviour
             }
         }
 
-        if (fingerUpPosition.x < fingerDownPosition.x)
+        if (Input.touchCount != 0)
         {
-            if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
-                                                                fingerDownPosition.x - fingerUpPosition.x))
+            if (fingerUpPosition.x < fingerDownPosition.x)
             {
-                manager.SwipeAction(1);
-            }
-            else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
-                                                                     fingerDownPosition.x - fingerUpPosition.x))
-            {
-                manager.SwipeAction(0);
+                if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
+                                                                    fingerDownPosition.x - fingerUpPosition.x))
+                {
+                    manager.SwipeAction(1);
+                }
+                else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
+                                                                         fingerDownPosition.x - fingerUpPosition.x))
+                {
+                    manager.SwipeAction(0);
+                }
+                else
+                {
+                    manager.SwipeAction(2);
+                }
             }
             else
             {
-                manager.SwipeAction(2);
-            }
-        }
-        else
-        {
-            if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
-                                                                fingerUpPosition.x - fingerDownPosition.x))
-            {
-                manager.SwipeAction(1);
-            }
-            else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
-                                                                     fingerUpPosition.x - fingerDownPosition.x))
-            {
-                manager.SwipeAction(0);
-            }
-            else
-            {
-                manager.SwipeAction(3);
+                if ((fingerUpPosition.y < fingerDownPosition.y) && (fingerDownPosition.y - fingerUpPosition.y >
+                                                                    fingerUpPosition.x - fingerDownPosition.x))
+                {
+                    manager.SwipeAction(1);
+                }
+                else if ((fingerUpPosition.y > fingerDownPosition.y) && (fingerUpPosition.y - fingerDownPosition.y >
+                                                                         fingerUpPosition.x - fingerDownPosition.x))
+                {
+                    manager.SwipeAction(0);
+                }
+                else
+                {
+                    manager.SwipeAction(3);
+                }
             }
         }
     }
