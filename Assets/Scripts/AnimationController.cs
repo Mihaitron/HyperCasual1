@@ -8,15 +8,17 @@ public class AnimationController : MonoBehaviour
 {
     private Animator animator;
     [SerializeField] private int animationNo = 0;
+    private ArrowsGenerator arrows;
 
     private void Start()
     {
         this.animator = this.GetComponent<Animator>();
+        arrows = GameObject.Find("ArrowManager").GetComponent<ArrowsGenerator>();
     }
 
     private void Update()
     {
-        if (false) // Check if "Awww" triggered
+        if (arrows.GetAww())
         {
             this.animationNo = 3;
         }

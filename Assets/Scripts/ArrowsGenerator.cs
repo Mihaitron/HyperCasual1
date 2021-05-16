@@ -28,6 +28,7 @@ public class ArrowsGenerator : MonoBehaviour
     private bool arrowSeted;
     private float songLength;
     private bool isPaused;
+    private bool isAww;
     
     
     void Start()
@@ -99,11 +100,8 @@ public class ArrowsGenerator : MonoBehaviour
                 {
                     Destroy(lastArrow);
                     arrowSeted = false;
+                    isAww = true;
                 }
-                Debug.Log("Last arrow: ");
-                Debug.Log(lastArrow.transform.position.x);
-                Debug.Log("Swipe Position: ");
-                Debug.Log(swipePos.transform.position.x);
             }
         }
         else
@@ -123,110 +121,114 @@ public class ArrowsGenerator : MonoBehaviour
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add sound perfect
                         // TODO add particle effect perfect play
                         views.AddViews(perfectViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add sound good job
                         // TODO add particle effect good job play
                         views.AddViews(goodViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add sound nice
                         // TODO add particle effect nice play
                         views.AddViews(niceViews);
+                        isAww = false;
                     }
                     else
                     {
-                        // TODO add sound ohh
                         // TODO add particle effect ohh play
+                        isAww = true;
                     }
                 }
                 else if (dir == ArrowDirection.DOWN && direction == 1)
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add sound perfect
                         // TODO add particle effect perfect play
                         views.AddViews(perfectViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add sound good job
                         // TODO add particle effect good job play
                         views.AddViews(goodViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add sound nice
                         // TODO add particle effect nice play
                         views.AddViews(niceViews);
+                        isAww = false;
                     }
                     else
                     {
-                        // TODO add sound ohh
                         // TODO add particle effect ohh play
+                        isAww = true;
+
                     }
                 }
                 else if (dir == ArrowDirection.LEFT && direction == 2)
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add sound perfect
                         // TODO add particle effect perfect play
                         views.AddViews(perfectViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add sound good job
                         // TODO add particle effect good job play
                         views.AddViews(goodViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add sound nice
                         // TODO add particle effect nice play
                         views.AddViews(niceViews);
+                        isAww = false;
                     }
                     else
                     {
-                        // TODO add sound ohh
                         // TODO add particle effect ohh play
+                        isAww = true;
+
                     }
                 }
                 else if (dir == ArrowDirection.RIGHT && direction == 3)
                 {
                     if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < perfectDistance)
                     {
-                        // TODO add sound perfect
                         // TODO add particle effect perfect play
                         views.AddViews(perfectViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < goodDistance)
                     {
-                        // TODO add sound good job
                         // TODO add particle effect good job play
                         views.AddViews(goodViews);
+                        isAww = false;
                     }
                     else if (Mathf.Abs(lastArrow.transform.position.x - swipePos.transform.position.x) < niceViews)
                     {
-                        // TODO add sound nice
                         // TODO add particle effect nice play
                         views.AddViews(niceViews);
+                        isAww = false;
                     }
                     else
                     {
-                        // TODO add sound ohh
                         // TODO add particle effect ohh play
+                        isAww = true;
+
                     }
                 }
                 else
                 {
-                    // TODO add sound ohh
                     // TODO add particle effect ohh play
+                    isAww = true;
+
                 }
 
                 Destroy(lastArrow);
@@ -243,5 +245,10 @@ public class ArrowsGenerator : MonoBehaviour
     public bool GetPaused()
     {
         return isPaused;
+    }
+
+    public bool GetAww()
+    {
+        return isAww;
     }
 }
