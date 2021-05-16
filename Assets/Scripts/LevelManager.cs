@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private IEnumerator ChangeSceneAsync(int scene_no)
     {
         float wait_time = SoundManager.instance.PlayButtonClickedSound();
+        Debug.Log(wait_time);
 
         yield return new WaitForSeconds(wait_time);
         
