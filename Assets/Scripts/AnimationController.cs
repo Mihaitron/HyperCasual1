@@ -18,7 +18,7 @@ public class AnimationController : MonoBehaviour
     {
         if (false) // Check if "Awww" triggered
         {
-            
+            this.animationNo = 3;
         }
         else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
