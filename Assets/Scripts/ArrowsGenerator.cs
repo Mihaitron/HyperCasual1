@@ -31,6 +31,9 @@ public class ArrowsGenerator : MonoBehaviour
     {
         arrowTimer = Random.Range(minTime, maxTime);
         arrowSeted = false;
+
+        int song_no = PlayerPrefs.GetInt("song_no");
+        SoundManager.instance.PlaySong(song_no);
     }
 
 
