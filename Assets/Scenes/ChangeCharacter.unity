@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -874,11 +874,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterDistance: 5
   characters:
-  - {fileID: 448872452472751550, guid: dfe970adad5861e4da50ef8a175dc24e, type: 3}
-  - {fileID: 2423370705404426569, guid: 636f4c57137866f4abba424a3a040539, type: 3}
-  - {fileID: 448872452472751550, guid: dfe970adad5861e4da50ef8a175dc24e, type: 3}
-  - {fileID: 2423370705404426569, guid: 636f4c57137866f4abba424a3a040539, type: 3}
-  - {fileID: 448872452472751550, guid: dfe970adad5861e4da50ef8a175dc24e, type: 3}
+  - {fileID: 7554058358507503357, guid: 21422f3442bb3c84bbc64c518de34b6d, type: 3}
+  - {fileID: 3349717501390733187, guid: 97f5c361d2e0f2c4485b7b4c6bbe9c38, type: 3}
+  - {fileID: 5256718158213031442, guid: 24da1c9db3872e442ba8e06fbc64b480, type: 3}
+  - {fileID: 69256318677841829, guid: b9c2a6bcee451dc4092e4c118e4fddf4, type: 3}
   characterNameContainer: {fileID: 1284388282}
 --- !u!1 &1284388280
 GameObject:
