@@ -54,8 +54,6 @@ public class ChooseLevel : MonoBehaviour
             this.current = this.levels.Count - 1;
             return;
         }
-        
-        Debug.Log(this.current);
 
         this.SetImage();
         this.SetCharacterName();
@@ -65,5 +63,7 @@ public class ChooseLevel : MonoBehaviour
     {
         SoundManager.instance.PlayButtonClickedSound();
         PlayerPrefs.SetInt("level_no", this.current);
+        
+        Debug.Log(this.current);
     }
 }
